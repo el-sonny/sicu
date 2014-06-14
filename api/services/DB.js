@@ -1,3 +1,4 @@
+var async = require('async');
 module.exports = { 
 	extractDependencia : function(){
 		console.log(1)
@@ -26,24 +27,45 @@ module.exports = {
 		Solicitud.count(function(err,n){
 			if(err) throw err;
 			var count = Math.round(n/10000)
-			, skip = 0;
-			//for(var i=0;i<count;i++){
-				Solicitud.find().skip(skip).limit(100).exec(function(err,objects){
+			, skip = 0
+			, range = [];
+			for(var i=0;i<=count;i++){
+				range.push(skip)
+				skip += 10000;
+			}
+			console.log(n,range);
+			return 1;
+			async.eachSeries(range,function(i,cb1){
+				Solicitud.find().skip(i).limit(100).exec(function(err,objects){
 					if(err) throw err;
-					objects.forEach(function(v){
+					async.eachSeries(objects,function(v,cb){
 						object.findOrCreate({nombre:v[old_field]},{nombre:v[old_field]}).exec(function(err,new_obj){
 							if(err) throw err;
-							Solicitud.update({id:v.id},{new_obj:new_obj.id}).exec(function(err,item){
-								if(err) throw err;
-								console.log(item);
-							});
+							var obj = {};
+							obj[new_field] = new_obj.id;
+							updateSolicitud(v.id,obj);
+							cb();
 						});
+					}
+					,function(err){
+						if(err) throw err;
 					});
 				});
-				skip += 10000;
+				cb1();
+			});
+
 			//}
 		});
 
 	}
-}
+	,extractAll:function(){
+		this.extract('DEPENDENCIA','dependencia',Dependencia);
+	}
+};
 
+function updateSolicitud(id,obj){
+	Solicitud.update({id:id},obj).exec(function(err,item){
+		if(err) throw err;
+		console.log(item);
+	});
+}
