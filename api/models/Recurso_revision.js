@@ -7,7 +7,11 @@
 
 module.exports = {
 
-  attributes: {'Folio de la solicitud': {model: 'solicitud'}},
+  attributes: {
+  	/*'Folio de la solicitud': {
+  		model: 'solicitud'
+  	}*/
+  },
   migrate: 'safe',
 };
 
