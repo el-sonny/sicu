@@ -31,7 +31,7 @@ var jsFilesToInject = [
 	// All of the rest of your client-side js files
 	// will be injected here in no particular order.
 	'js/**/*.js',
-	'bower_components/jquery/dist/js/jquery.min.js',
+	'bower_components/jquery/dist/jquery.min.js',
 	'bower_components/bootstrap/dist/js/bootstrap.min.js',
 	'bower_components/angular/angular.min.js'
 ];
