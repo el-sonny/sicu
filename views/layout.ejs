@@ -13,8 +13,11 @@
   </head>
 
   <body>
-    <%- partial('global/navbar') -%> 
-    <%- body %>
+    <%- partial('global/navbar') -%>
+    <div class="container-fluid" id="main">
+      <%- body %>
+    </div>
+
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
