@@ -2,16 +2,50 @@
         <div class="panel-heading">
             <a href="">Solicito una copia simple del Acta del Pleno del Instituto Celebrada el 10 de junio de 2003</a>
             <span class='date'> | 2003/06/12</span>
+            <p>México , Distrito Federal , MIGUEL HIDALGO , 11950 </p>
+            <div class="vote-action">
+                Votar <div class="arrows"><a href="#" class="up"></a><a href="#" class="down"></a></div>
+            </div>    
+            <div class="clear"></div>
         </div>
     </div>
-    <div class='solicitud-data'>
-        <p><strong>Tipo de solicitud:</strong> Información Pública</p>
-        <p><strong>Estatus:</strong> Terminada</p>
-        <p>Todos los martes el Pleno del IFAI lleva a cabo sus sesiones ordinarias</p>
+    <div class="row">
+        <div class="col-md-9">
+          <div class='solicitud-data'>
+            <p><strong>Sector: </strong> Hacienda y Crédito Público </p>
+            <p><strong>Tipo de solicitud:</strong> Información Pública</p>
+            <p><strong>Estatus:</strong> Terminada</p>
+            <p>Todos los martes el Pleno del IFAI lleva a cabo sus sesiones ordinarias</p>
+          </div>              
+        </div>
+        <div class="col-md-3">
+          <div class="status">
+            <div class="votes"><p>Votos</p><p><strong>22</strong></p></div>
+            <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-remove"></span></p></div>
+            <div class="clear"></div>
+          </div>
+        </div>
     </div>
     <hr>
-    <h4>Respuestas</h4>
+    <h4>Respuesta</h4>
     <div class="respuesta-data">
         <p>No se dara tramite a la solicitud  | <strong>12/02/2014</strong></p>
         <p class="text-respuesta">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, maxime iusto perspiciatis eligendi sunt modi quia cupiditate! Explicabo enim perspiciatis magnam cumque. Nihil, recusandae ipsam ipsum soluta optio nisi dolor?</p>
+        <p><strong>File: </strong><a href='#' class='file-icon glyphicon glyphicon-file'></a></p>
     </div>
+
+<br />
+<h3>Recursos de revisión</h3>
+<div class='recursos_revision'>
+	<% for(y=0;y<10;y++){ %>
+	<div class='rec_rev_indiv'>
+		<h5> UnidadEnlace | <span class='date'>DATE</span> </h5>
+		<p><strong> Comisionado: </strong> nombre </p>
+		<p><strong> Plazos ampliación: </strong> </p>
+		<p><strong> Sentido de la resolución:</strong> </p>
+		<p><strong> Votos disidentes:</strong>  <strong> Votos particulares:</strong> </p>
+		<p><strong> Cumplimiento: </strong>  </p>
+		<p><strong> A-P-D:</strong> </p>
+	</div>
+	<% } %>
+</div>
