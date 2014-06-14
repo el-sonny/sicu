@@ -12,21 +12,31 @@
               </div>
           </div>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
               <div class='solicitud-data'>
                   <p><strong>Tipo de solicitud:</strong> Información Pública</p>
                   <p><strong>Estatus:</strong> Terminada</p>
                   <p>Todos los martes el Pleno del IFAI lleva a cabo sus sesiones ordinarias</p>
               </div>              
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3">
+              <div class="info">
+                <div class="votes"><p>Votos</p><p><strong>22</strong></p></div>
+                <% if(x%2==0){ %>
+                <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-ok"></span></p></div>
+                <% }else{%>
+                <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-remove"></span></p></div>
+                <% }%>
+                <div class="clear"></div>
+              </div>
+            </div>
           </div>
 
         <hr>
       <% } %>
     <!-- / lista de solicitudes -->
 
-    <p>
+    <!--<p>
     <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
     </p>-->
     <ul class="pagination">
