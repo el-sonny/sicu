@@ -4,50 +4,24 @@
     
       <h2></h2>
       
-      <!-- item list -->
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      
-      <div class="panel panel-default">
-        <div class="panel-heading"><a href="">Item heading</a></div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-        Aliquam in felis sit amet augue.</p>
-      
-      <hr>
-      <!-- /item list -->
-      
-        
-      <!--<p>
+      <!-- lista de solicitudes -->
+        <% for( x=0;x<10;x++ ){ %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <a href="">Solicito una copia simple del Acta del Pleno del Instituto Celebrada el 10 de junio de 2003</a>
+                    <span class='date'> | 2003/06/12</span>
+                </div>
+            </div>
+            <div class='solicitud-data'>
+                <p><strong>Tipo de solicitud:</strong> Información Pública</p>
+                <p><strong>Estatus:</strong> Terminada</p>
+                <p>Todos los martes el Pleno del IFAI lleva a cabo sus sesiones ordinarias</p>
+            </div>
+          <hr>
+        <% } %>
+      <!-- / lista de solicitudes -->
+
+      <p>
       <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
       </p>-->
       <ul class="pagination">
