@@ -1,17 +1,14 @@
 <div class="row">
   <div class="col-xs-12" id="left">
-  
-    <h2></h2>
-    
-    <!-- lista de solicitudes -->
+      <!-- lista de solicitudes -->
       <% for(var i=0; i<solicitudes.length; i++) {
           var solicitud = solicitudes[i];
       %>
           <div class="panel panel-default">
             <div class="panel-heading">
-                <a href="<%- solicitud.FOLIO -%>"><%- solicitud.DESCRIPCIONSOLICITUD %></a>
-                <span class='date'> | <%- solicitud.FECHASOLICITUD %></span>
-                <p><%- solicitud.dependencia %></p>
+                <p><a href="/solicitud/index/<%- solicitud.FOLIO -%>"><%- solicitud.DESCRIPCIONSOLICITUD %></a></p>
+                <p><a href='/solicitud/dependencia/'><%- solicitud.DEPENDENCIA %></a>
+                <span class='date'> | <%- solicitud.FECHASOLICITUD %></span></p>
                 <!-- <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p> -->
                 <div class="vote-action">
                     Votar <div class="arrows"><a href="#" class="up"></a><a href="#" class="down"></a></div>
