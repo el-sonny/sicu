@@ -31,6 +31,10 @@ module.exports = {
       collection : 'recurso_revision',
       via : 'Folio de la solicitud'
     },
+    'ferencias_periodisticas' : {
+      collection : 'referencia_periodistica',
+      via : 'solicitud'
+    },
     'respuesta' : {
       model : 'respuesta'
     }

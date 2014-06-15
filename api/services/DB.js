@@ -1,6 +1,9 @@
 var async = require('async');
 module.exports = { 
 	navQuery : function(req,cb){
+		if(req.param('vote') && req.user){
+			return cb({});
+		}
 		var functs = [
 			function(callback){
 				Dependencia.find({}).sort('nombre').exec(callback);	
