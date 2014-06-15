@@ -20,7 +20,7 @@
             <p><strong>Dependencia: </strong><%- solicitud.DEPENDENCIA %></p>
             <p><strong>Medio de entrega: </strong><%- solicitud.MEDIOENTREGA %></p>
             <p><strong>Fecha Límite: </strong><%- solicitud.FECHALIMITE %></p>
-            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><br /><strong>Archivo adjunto: </strong><br /><a target='_blank' href='<%-solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><br /><strong>Archivo adjunto: </strong><br /><a target='_blank' href='<%- solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
           </div>              
         </div>
         <div class="col-md-3">
