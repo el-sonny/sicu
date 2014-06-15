@@ -7,9 +7,10 @@
 
 module.exports = {
 	    index: function(req, res) {
-	    	Solicitud.find({FOLIO:req.param('id')}).exec(function(e,s){
-				//res.view({solicitud:s});
+	    	console.log(req.param('id'));
+	    	Solicitud.findOne({'FOLIO':parseInt(req.param('id'))},function(e,s){
 				console.log(s);
+				//res.view({solicitud:s});
 			});
         },
         search: function(req, res){

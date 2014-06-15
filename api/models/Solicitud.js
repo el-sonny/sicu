@@ -10,6 +10,10 @@ module.exports = {
   	'FECHASOLICITUD' : 'datetime',
   	'dependencia' : {
   		model : 'dependencia'
+  	},
+  	'FOLIO' : {
+      unique : true,
+      index : true
   	}
   }, 
   migrate:'safe'
