@@ -14,35 +14,32 @@
 				<div class="row">
 					<div class="col-md-3">
 						<select name="dependencias">
-						<% for(var j=0; j<dependencias.length; j++) {
-					        var dependencia = dependencias[j];
-					    %>
-					    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
-					    <% }%>
+							<option value="#">Dependencia</option>
+							<% for(var j=0; j<dependencias.length; j++) {
+						        var dependencia = dependencias[j];
+						    %>
+						    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
+						    <% }%>
 						</select>						
 					</div>					
 					<div class="col-md-3">
 						<select name="sector">
 							<option value="#">Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
-							<option value="#">Prueba Sector</option>
+							<% for(var j=0; j<sectores.length; j++) {
+						        var sector = sectores[j];
+						    %>
+						    	<option value='<%- sector.id %>'><%- sector.nombre %></option>
+						    <% }%>
 						</select>						
 					</div>
 					<div class="col-md-3">
 						<select name="status">
 							<option value="#">Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
-							<option value="#">Prueba Status</option>
+							<% for(var j=0; j<statii.length; j++) {
+						        var status = statii[j];
+						    %>
+						    	<option value='<%- status.id %>'><%- status.nombre %></option>
+						    <% }%>
 						</select>						
 					</div>
 					<div class="col-md-3">
