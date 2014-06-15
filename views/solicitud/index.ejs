@@ -20,7 +20,7 @@
             <p><strong>Dependencia: </strong><%- solicitud.DEPENDENCIA %></p>
             <p><strong>Medio de entrega: </strong><%- solicitud.MEDIOENTREGA %></p>
             <p><strong>Fecha Límite: </strong><%- solicitud.FECHALIMITE %></p>
-            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><strong>Archivo adjunto: </strong><a target='_blank' href='<%-solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><br /><strong>Archivo adjunto: </strong><br /><a target='_blank' href='<%-solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
           </div>              
         </div>
         <div class="col-md-3">
@@ -40,7 +40,7 @@
     <div class="respuesta-data">
         <p><%- solicitud.RESPUESTA %>  | <strong><%- solicitud.FECHARESPUESTA %></strong></p>
         <p class="text-respuesta"><%- solicitud.TEXTORESPUESTA %></p>
-        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><strong>Archivo de respuesta: </strong><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><br /><strong>Archivo de respuesta: </strong><br /><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
     </div>
 
 <br />
