@@ -1,5 +1,9 @@
 <div class="row" ng-controller="votesCTL">
 <span class="hidden page"><%=req.param('page') || 0%></span>
+<span class="hidden dependencia"><%=req.param('dependencia') || ''%></span>
+<span class="hidden sector"><%=req.param('sector') || ''%></span>
+<span class="hidden status"><%=req.param('status') || ''%></span>
+<span class="hidden text"><%=req.param('text') || ''%></span>
   <div class="col-xs-12" id="left">
       <!-- lista de solicitudes -->
       <% if(solicitudes){for(var i=0; i<solicitudes.length; i++) {
