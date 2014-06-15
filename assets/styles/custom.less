@@ -18,6 +18,8 @@ body{padding-top:50px; /*padding for navbar*/}
 /*Header*/
 html .navbar-custom{background-color: #00BD70;}
 html .navbar-nav{float: right;}
+html .navbar-custom li > a:hover, html .navbar-custom li > a:focus{color: #007948;background-color: transparent;}
+html .navbar-brand:hover,html .navbar-brand:focus{color:white;}
 .navbar-custom .icon-bar{background-color:#fff;}
 .navbar-custom {background-color: #168ccc;color:#fff;}
 .navbar-custom li>a:hover,.navbar-custom li>a:focus {background-color:#49bfff;}
@@ -34,6 +36,7 @@ html .navbar-nav{float: right;}
 #left {height:100%; }
 #main{padding-top: 20px;max-width: 1000px;}
 #main p{margin:0;}
+#main a[href]{color:#00BD70;}
 #main .respuesta-data p,#main .recursos_revision .rec_rev_indiv p,
 #main .solicitud-data p {text-align: justify;}
 #main .panel-heading{padding: 10px 65px 10px 15px;position: relative;}
@@ -65,3 +68,7 @@ html .navbar-nav{float: right;}
 	#main .panel-heading .vote-action .arrows .down{margin-left: 4px}
 }
 
+
+@media (max-width: 580px){
+	.navbar .navbar-brand{font-size: 0;color: transparent;}
+}
