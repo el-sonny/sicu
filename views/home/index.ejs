@@ -6,7 +6,7 @@
       %>
           <div class="panel panel-default">
             <div class="panel-heading">
-                <p><a href="/solicitud/index/<%- solicitud.FOLIO %>"><%- solicitud.DESCRIPCIONSOLICITUD %></a></p>
+                <p><a href="/solicitud/index/<%- solicitud.id %>"><%- solicitud.DESCRIPCIONSOLICITUD %></a></p>
                 <p><a href='/dependencia/?nombre=<%- solicitud.DEPENDENCIA %>'><%- solicitud.DEPENDENCIA %></a>
                 <span class='date'> | <%- solicitud.FECHASOLICITUD %></span></p>
                 <!-- <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p> -->
@@ -30,7 +30,7 @@
                 <% if (solicitud.RESPUESTA!= 'Sin respuesta'){ %>
                 <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-ok"></span></p></div>
                 <% }else{%>
-                <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-remove"></span></p></div>
+                <div class="respondida"><p>Respuesta</p><p><span class="glyphicon glyphicon-remove"></span></p></div>
                 <% }%>
                 <div class="clear"></div>
               </div>
@@ -40,18 +40,12 @@
         <hr>
       <% }} %>
     <!-- / lista de solicitudes -->
-
-    <!--<p>
-    <a href="http://bootply.com" target="_ext" class="center-block btn btn-primary">More Bootstrap Snippets on Bootply</a>
-    </p>-->
     <ul class="pagination">
-      <li><a href="#">&laquo;</a></li>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">&raquo;</a></li>
+      <li><a href="<%- pagination.base %>1">&laquo;</a></li>
+      <% for(var k=pagination.start; k<pagination.start+5; k++) { %>   
+        <li><a href="/<%-pagination.base+k %>"><%- k %></a></li>
+      <% } %>
+      <li><a href="<%- pagination.base+pagination.pages %>">&raquo;</a></li>
     </ul>
       
     <hr>      

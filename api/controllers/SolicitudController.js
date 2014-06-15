@@ -7,7 +7,8 @@
 
 module.exports = {
 	    index: function(req, res) {
-			Solicitud.findOne({'FOLIO':parseInt(req.param('id'))}).populate('recursos_revision').exec(function(e,s){
+			Solicitud.findOne({'id':req.param('id')}).exec(function(e,s){
+				if(e) throw(e);
 				DB.navQuery(req,function(values){
 					values.solicitud = s;
 					res.view(values);
