@@ -16,8 +16,9 @@ module.exports = {
       index : true
   	},
     'recursos_revision' : {
-      collection : 'recurso_revision'
-    },
+      collection : 'recurso_revision',
+      via : 'Folio de la solicitud'
+    }
   },
   
   migrate:'safe'
