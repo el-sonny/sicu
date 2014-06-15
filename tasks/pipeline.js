@@ -32,7 +32,6 @@ var jsFilesToInject = [
 	'bower_components/jquery/dist/jquery.min.js',
 	'bower_components/bootstrap/dist/js/bootstrap.min.js',
 	'bower_components/angular/angular.min.js',
-	'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
 	'js/**/*.js',
 ];
 
