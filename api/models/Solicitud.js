@@ -7,10 +7,10 @@
 
 module.exports = {
   attributes: {
-  	'FECHASOLICITUD' : 'datetime',
+  	'FECHASOLICITUD' : 'datetime',/*
   	'dependencia' : {
   		model : 'dependencia'
-  	},
+  	},*/
   	'FOLIO' : {
       unique : true,
       index : true
@@ -18,7 +18,7 @@ module.exports = {
     'recursos_revision' : {
       collection : 'recurso_revision',
       via : 'Folio de la solicitud'
-    }
+    },
   },
   
   migrate:'safe'

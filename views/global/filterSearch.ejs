@@ -1,59 +1,60 @@
 <div class="row filter-search">
-		<form class="">
-			<div class="col-md-4">
-				<div class="form-group" style="display:inline;">
-				  <div class="input-group">
-				    <input type="text" class="form-control" placeholder="What are searching for?">
-				    <span class="input-group-btn">
-				          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> </button>
-				    </span>
-				  </div>
-				</div>
+	<form class="" action='/' method="get" accept-charset="utf-8">
+		<div class="col-md-4">
+			<div class="form-group" style="display:inline;">
+			  <div class="input-group">
+			    <input type="text" class="form-control" placeholder="Que estas buscando?">
+			    <span class="input-group-btn">
+			          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> </button>
+			    </span>
+			  </div>
 			</div>
-			<div class="col-md-7">
-				<div class="row">
-					<div class="col-md-3">
-						<select name="dependencias">
-							<option value="#">Dependencia</option>
-							<% for(var j=0; j<dependencias.length; j++) {
-						        var dependencia = dependencias[j];
-						    %>
-						    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>					
-					<div class="col-md-3">
-						<select name="sector">
-							<option value="#">Sector</option>
-							<% for(var j=0; j<sectores.length; j++) {
-						        var sector = sectores[j];
-						    %>
-						    	<option value='<%- sector.id %>'><%- sector.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>
-					<div class="col-md-3">
-						<select name="status">
-							<option value="#">Status</option>
-							<% for(var j=0; j<statii.length; j++) {
-						        var status = statii[j];
-						    %>
-						    	<option value='<%- status.id %>'><%- status.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>
-					<div class="col-md-3">
-			            <p class="input-group date-btn" ng-controller="datepickerCTL">
-			              <span class="input-group-btn">
-			                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i> Fecha</button>
-			              <input type="hidden" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-			              </span>
-			            </p>					
-					</div>
+		</div>
+		<div class="col-md-7">
+			<div class="row">
+				<div class="col-md-3">
+					<select name="dependencia">
+						<option value="">Dependencia</option>
+						<% for(var j=0; j<dependencias.length; j++) {
+					        var dependencia = dependencias[j];
+					    %>
+					    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>					
+				<div class="col-md-3">
+					<select name="sector">
+						<option value="">Sector</option>
+						<% for(var j=0; j<sectores.length; j++) {
+					        var sector = sectores[j];
+					    %>
+					    	<option value='<%- sector.id %>'><%- sector.nombre %></option>
+					    <% }%>
+					</select>						
 				</div>
-			</div>	
-			<div class="col-md-1">
-				<button type="button" class="btn btn-search">Buscar</button>
+				<div class="col-md-3">
+					<select name="status">
+						<option value="">Status</option>
+						<% for(var j=0; j<statii.length; j++) {
+					        var status = statii[j];
+					    %>
+					    	<option value='<%- status.id %>'><%- status.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>
+				
+				<div class="col-md-3">
+		            <p class="input-group date-btn" ng-controller="datepickerCTL">
+		              <span class="input-group-btn">
+		                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i> Fecha</button>
+		              <input type="hidden" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+		              </span>
+		            </p>					
+				</div>				
 			</div>
-		</form>	
+		</div>	
+		<div class="col-md-1">
+			<input type="submit" class="btn btn-search" value='buscar' />
+		</div>
+	</form>	
 </div>
