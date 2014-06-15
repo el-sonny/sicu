@@ -28,7 +28,11 @@ passport.serializeUser(function(user, done){
 });
    
 passport.deserializeUser(function(id, done){
-	done(null,id);
+	Twitter.findOne({nombre:id.profile.username}).exec(function(err,user){
+		id.voteup = user.voteup || [];
+		id.votedown = user.votedown || [];
+		done(null,id);
+	});
 });
 
 module.exports = {
