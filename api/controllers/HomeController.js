@@ -13,7 +13,6 @@ module.exports = {
 		if(req.param('status')) params.estatus = req.param('status');
 		if(req.param('text')) params.DESCRIPCIONSOLICITUD = {contains : req.param('text')};
 		var page = req.param('page') ? req.param('page') : 0;
-		console.log(params);
 		DB.navQuery(req,function(values){
 			vote(req,res,function(voteup,votedown){
 				Solicitud.count(params).exec(function(e,count){
