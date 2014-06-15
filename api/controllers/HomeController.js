@@ -14,9 +14,7 @@ module.exports = {
 		DB.navQuery(req,function(values){
 			vote(req,res,function(voteup,votedown){
 				Solicitud.find().where(params).limit(10).sort({'FECHASOLICITUD':'desc'}).exec(function(e,solicitudes){
-					values.solicitudes = solicitudes;
-					
-					console.log(req.user);
+					values.solicitudes = solicitudes;	
 					if(req.param('json'))
 						res.json({
 							solicitudes:solicitudes
