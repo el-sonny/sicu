@@ -6,5 +6,9 @@
  */
 
 module.exports = {
-	
+	    index: function(req, res) {
+		DB.navQuery(req,function(values){
+			res.view(values);
+		});	        
+	}
 };
