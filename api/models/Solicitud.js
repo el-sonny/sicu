@@ -7,18 +7,33 @@
 
 module.exports = {
   attributes: {
-  	'FECHASOLICITUD' : 'datetime',/*
-  	'dependencia' : {
-  		model : 'dependencia'
-  	},*/
+  	'FECHASOLICITUD' : {
+      type: 'DATETIME',
+      index : true
+    },
   	'FOLIO' : {
       unique : true,
       index : true
-  	},
+    },
+    'dependencia' : {
+      index : true
+    },
+    'status' : {
+      index : true
+    },
+    'sector' : {
+      index : true
+    },
+    'sector' : {
+      index : true
+    },
     'recursos_revision' : {
       collection : 'recurso_revision',
       via : 'Folio de la solicitud'
     },
+    'respuesta' : {
+      model : 'respuesta'
+    }
   },
   
   migrate:'safe'
