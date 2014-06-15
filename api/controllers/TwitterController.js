@@ -10,13 +10,17 @@ module.exports = {
 	 auth: passport.authenticate('twitter')
 
 	, callback: passport.authenticate('twitter',{
-			  successRedirect: '/twitter/success'
-			, failureRedirect: '/twitter/login'
+			  successRedirect: '/'
+			, failureRedirect: '/twitter/loginError'
 		})
-	, login:function(req,res){
-		res.json('logueate to /twitter/auth');
+	, loginError:function(req,res){
+		res.json('error al iniciar');
 	}
 	, success: function(req,res){
 		res.json(req.user)
+	}
+	, logout: function(req,res){
+		req.logout();
+		res.redirect('/');
 	}
 };
