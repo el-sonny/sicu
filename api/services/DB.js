@@ -24,6 +24,8 @@ module.exports = {
 		});
 	},
 	extract : function(old_field,new_field,object,limit){
+		console.log('field',old_field);
+		return 1;
 		Solicitud.count(function(err,n){
 			limit = limit || 500;
 			if(err) throw err;
@@ -47,10 +49,13 @@ module.exports = {
 					}
 					,function(err){
 						if(err) throw err;
-						console.log(i)
+						console.log(old_field+' limit:'+i);
 						cb1();
 					});
 				});
+			},function(err){
+				if(err) throw err;
+				console.log('finish:'+old_field);
 			});
 
 			//}
@@ -58,7 +63,13 @@ module.exports = {
 
 	}
 	,extractAll:function(){
-		this.extract('DEPENDENCIA','dependencia',Dependencia);
+		//this.extract('DEPENDENCIA','dependencia',Dependencia);
+		this.extract('ESTATUS','estatus',Estatus);
+		this.extract('MEDIOENTRADA','medioentrada',Medioentrada);
+		this.extract('MEDIOENTREGA','medioentrega',Medioentrega);
+		this.extract('RESPUESTA','respuesta',Respuesta);
+		this.extract('SECTOR','sector',Sector);
+		this.extract('TIPOSOLICITUD','tiposolicitud',Tiposolicitud);
 	}
 };
 
