@@ -12,10 +12,15 @@
     <div class="row">
         <div class="col-md-9">
           <div class='solicitud-data'>
+            <p><strong>Folio: </strong> <%- solicitud.FOLIO %> </p>
             <p><strong>Sector: </strong> <%- solicitud.SECTOR %> </p>
             <p><strong>Tipo de solicitud:</strong> <%- solicitud.TIPOSOLICITUD %> </p>
             <p><strong>Estatus:</strong> <%- solicitud.ESTATUS %></p>
             <p><%- solicitud.OTROSDATOS %></p>
+            <p><strong>Dependencia: </strong><%- solicitud.DEPENDENCIA %></p>
+            <p><strong>Medio de entrega: </strong><%- solicitud.MEDIOENTREGA %></p>
+            <p><strong>Fecha Límite: </strong><%- solicitud.FECHALIMITE %></p>
+            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><strong>Archivo adjunto: </strong><a target='_blank' href='<%-solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
           </div>              
         </div>
         <div class="col-md-3">
@@ -31,28 +36,28 @@
     <div class="respuesta-data">
         <p><%- solicitud.RESPUESTA %>  | <strong><%- solicitud.FECHARESPUESTA %></strong></p>
         <p class="text-respuesta"><%- solicitud.TEXTORESPUESTA %></p>
-        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><strong>File: </strong><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><strong>Archivo de respuesta: </strong><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
     </div>
 
 <br />
+<% if( solicitud.recursos_revision ){  %>
 <h3>Recursos de revisión</h3>
 <div class='recursos_revision'>
 	<% 
-    if( solicitud.recursos_revision ){ 
-        for(var y=0;y<solicitud.recursos_revision.length;y++){ 
-            var recurso = solicitud.recursos_revision[y];
+    for(var y=0;y<solicitud.recursos_revision.length;y++){ 
+        var recurso = solicitud.recursos_revision[y];
     %>
-        	<div class='rec_rev_indiv'>
-        		<h5> UnidadEnlace | <span class='date'>DATE</span> </h5>
-        		<p><strong> Comisionado: </strong> nombre </p>
-        		<p><strong> Plazos ampliación: </strong> </p>
-        		<p><strong> Sentido de la resolución:</strong> </p>
-        		<p><strong> Votos disidentes:</strong>  <strong> Votos particulares:</strong> </p>
-        		<p><strong> Cumplimiento: </strong>  </p>
-        		<p><strong> A-P-D:</strong> </p>
-        	</div>
+    	<div class='rec_rev_indiv'>
+    		<h5> UnidadEnlace | <span class='date'>DATE</span> </h5>
+    		<p><strong> Comisionado: </strong> nombre </p>
+    		<p><strong> Plazos ampliación: </strong> </p>
+    		<p><strong> Sentido de la resolución:</strong> </p>
+    		<p><strong> Votos disidentes:</strong>  <strong> Votos particulares:</strong> </p>
+    		<p><strong> Cumplimiento: </strong>  </p>
+    		<p><strong> A-P-D:</strong> </p>
+    	</div>
 	<% 
-        } 
     } 
     %>
 </div>
+<% } %>
