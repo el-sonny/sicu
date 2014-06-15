@@ -20,7 +20,7 @@
             <p><strong>Dependencia: </strong><%- solicitud.DEPENDENCIA %></p>
             <p><strong>Medio de entrega: </strong><%- solicitud.MEDIOENTREGA %></p>
             <p><strong>Fecha Límite: </strong><%- solicitud.FECHALIMITE %></p>
-            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><strong>Archivo adjunto: </strong><a target='_blank' href='<%-solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+            <% if(solicitud.ARCHIVOADJUNTOSOLICITUD != '' ){ %><p><br /><strong>Archivo adjunto: </strong><br /><a target='_blank' href='<%- solicitud.ARCHIVOADJUNTOSOLICITUD %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
           </div>              
         </div>
         <div class="col-md-3">
@@ -40,11 +40,11 @@
     <div class="respuesta-data">
         <p><%- solicitud.RESPUESTA %>  | <strong><%- solicitud.FECHARESPUESTA %></strong></p>
         <p class="text-respuesta"><%- solicitud.TEXTORESPUESTA %></p>
-        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><strong>Archivo de respuesta: </strong><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
+        <% if(solicitud.ARCHIVORESPUESTA != '' ){ %><p><br /><strong>Archivo de respuesta: </strong><br /><a target='_blank' href='<%-solicitud.ARCHIVORESPUESTA %>' class='file-icon glyphicon glyphicon-file'></a></p> <% } %>
     </div>
 
 <br />
-<% if( solicitud.recursos_revision ){  %>
+<% if( solicitud.recursos_revision.length > 0 ){  %>
 <h3>Recursos de revisión</h3>
 <div class='recursos_revision'>
 	<% 
@@ -65,3 +65,33 @@
     %>
 </div>
 <% } %>
+
+<div class='articulos_relacionados'>
+    <h3>Artículos relacionados</h3>
+    <p>Comprate links de artículos relacionados con el tema que sirvan para complementar o aclarar dudas.</p>
+    <% if(req.user && req.user.profile){ %>
+        <form action='/solicitud/addarticle/<%- solicitud.id %>' method='POST' accept-charset="utf-8" role='form'>
+            <div class='form-group'>
+                <textarea name='text' class='form-control' ></textarea>
+            </div>
+            <input type='submit' value='Enviar' class='btn btn-default' />
+        </form>
+    <% }else{ %>
+        <br />
+        <div class='alert alert-warning'>Debes estar logueado para poder dejar un link</div>
+    <% } %>
+    <div class='articulos_result'>
+        <% 
+        for(x=0;x<solicitud.ferencias_periodisticas.length;x++){ 
+            var referencia = solicitud.ferencias_periodisticas[x];
+        %>
+            <div class="panel panel-default">
+              <div class="panel-heading"><%- referencia.user %></div>
+              <div class="panel-body">
+                <% var link = referencia.text.replace(/(?:(https?\:\/\/[^\s]+))/m , '<a href="$1">$1</a>') %>
+                <%- link %>
+              </div>
+            </div>
+        <% } %>
+    </div>
+</div>
