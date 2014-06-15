@@ -6,14 +6,10 @@
  */
 module.exports = {
 	    index: function(req, res) {
-			Solicitud.findOne({'FOLIO':parseInt(req.param('id'))}).exec(function(e,s){
-				/*var rp = Referencia_periodistica.find().where({'solicitud':}).exec(function(e,rp){
-					return rp;
-				});*/
+			Solicitud.findOne({'id':req.param('id')}).populate('ferencias_periodisticas').exec(function(e,s){
+				if(e) throw(e);
 				DB.navQuery(req,function(values){
 					values.solicitud = s;
-					//values.referencias_periodisticas = rp;console.log(rp);
-					console.log(s);
 					res.view(values);
 				});	
 			});
@@ -22,16 +18,20 @@ module.exports = {
         	return res.view();
         },
         addarticle : function(req, res){
-        	console.log(typeof req.user);
-        	/*if( typeof req.user != 'undefined' && req.param('text') && req.param('text') != '' ){
+        	//console.log(typeof req.user);
+        	if( typeof req.user != 'undefined' && req.param('text') && req.param('text') != '' ){
         		Referencia_periodistica.create({
 	        		user : req.user.profile.username,
+	        		solicitud : req.param('id'),
 	        		text : req.param('text')
-	        	}).done(function(){
-	        		res.redirect('/solicitud/index/' + req.param('id'));
+	        	},function( err , referencia_periodistica ){
+	        		if(err)
+	        			console.log(err);
+	        		else
+	        			res.redirect('/solicitud/index/' + req.param('id'));
 	        	});
         	}else{
         		res.redirect('/solicitud/index/' + req.param('id'));
-        	}*/
+        	}
         }
 };

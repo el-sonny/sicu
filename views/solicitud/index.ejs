@@ -66,7 +66,7 @@
     <h3>Artículos relacionados</h3>
     <p>Comprate links de artículos relacionados con el tema que sirvan para complementar o aclarar dudas.</p>
     <% if(req.user && req.user.profile){ %>
-        <form action='/solicitud/addarticle/<%- solicitud.FOLIO %>' metod='' role='form'>
+        <form action='/solicitud/addarticle/<%- solicitud.id %>' method='POST' accept-charset="utf-8" role='form'>
             <div class='form-group'>
                 <textarea name='text' class='form-control' ></textarea>
             </div>
@@ -77,13 +77,17 @@
         <div class='alert alert-warning'>Debes estar logueado para poder dejar un link</div>
     <% } %>
     <div class='articulos_result'>
-        <% for(x=0;x<6;x++){ %>
-        <div class="panel panel-default">
-          <div class="panel-heading">Username</div>
-          <div class="panel-body">
-            Lorem ipsum dolor sit amet
-          </div>
-        </div>
+        <% 
+        for(x=0;x<solicitud.ferencias_periodisticas.length;x++){ 
+            var referencia = solicitud.ferencias_periodisticas[x];
+        %>
+            <div class="panel panel-default">
+              <div class="panel-heading"><%- referencia.user %></div>
+              <div class="panel-body">
+                <% var link = referencia.text.replace(/(?:(https?\:\/\/[^\s]+))/m , '<a href="$1">$1</a>') %>
+                <%- link %>
+              </div>
+            </div>
         <% } %>
     </div>
 </div>

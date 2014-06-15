@@ -6,7 +6,6 @@
 */
 
 module.exports = {
-
   attributes: {
   	'id' : {
   		unique : true,
@@ -15,7 +14,9 @@ module.exports = {
   	'solicitud' : {
   		index :true,
   		model:'solicitud'
-  	}
+  	},
+    user : 'string',
+    text : 'string'
   },
   migrate : 'safe',
 };
