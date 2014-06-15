@@ -3,7 +3,7 @@ var passport = require('passport')
 , twitter_keys = {
 	  consumerKey: '7rchLSR07fPcpUe5A6ksyZaCi'
 	, consumerSecret: '2VA32kSl0bUb7C5i0brtYkcO4MSftTbwobrrCfiPIHCdiACmMk'
-	, callbackURL: 'http://127.0.0.1:1337/twitter/callback'
+	, callbackURL: 'http://projects.spaceshiplabs.com:1442/twitter/callback'
 };
 
 passport.use(new twitter(twitter_keys,function(token,tokenSecret,profile,done){

@@ -11,6 +11,7 @@ module.exports = {
 		if(req.param('dependencia')) params.dependencia = req.param('dependencia');
 		if(req.param('sector')) params.sector = req.param('sector');
 		if(req.param('status')) params.estatus = req.param('status');
+		if(req.param('fecha')) params.FECHASOLICITUD = {startsWith:req.param('fecha')};
 		var page = req.param('page') ? req.param('page') : 0;
 
 		DB.navQuery(req,function(values){
