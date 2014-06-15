@@ -4,12 +4,15 @@
     <h2></h2>
     
     <!-- lista de solicitudes -->
-      <% for( x=0;x<10;x++ ){ %>
+      <% for(var i=0; i<solicitudes.length; i++) {
+          var solicitud = solicitudes[i];
+      %>
           <div class="panel panel-default">
             <div class="panel-heading">
-                <a href="">Solicito una copia simple del Acta del Pleno del Instituto Celebrada el 10 de junio de 2003</a>
-                <span class='date'> | 2003/06/12</span>
-                <p>México , Distrito Federal , MIGUEL HIDALGO , 11950 </p>
+                <a href="<%- solicitud.FOLIO -%>"><%- solicitud.DESCRIPCIONSOLICITUD %></a>
+                <span class='date'> | <%- solicitud.FECHASOLICITUD %></span>
+                <p><%- solicitud.dependencia %></p>
+                <!-- <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p> -->
                 <div class="vote-action">
                     Votar <div class="arrows"><a href="#" class="up"></a><a href="#" class="down"></a></div>
                 </div>    
@@ -19,15 +22,15 @@
           <div class="row">
             <div class="col-md-9">
               <div class='solicitud-data'>
-                  <p><strong>Tipo de solicitud:</strong> Información Pública</p>
-                  <p><strong>Estatus:</strong> Terminada</p>
-                  <p>Todos los martes el Pleno del IFAI lleva a cabo sus sesiones ordinarias</p>
+                  <p><strong>Tipo de solicitud:</strong> <%- solicitud.TIPOSOLICITUD %></p>
+                  <p><strong>Respuesta:</strong> <%- solicitud.RESPUESTA %></p>
+                  <p><%- solicitud.TEXTORESPUESTA%></p>
               </div>              
             </div>
             <div class="col-md-3">
               <div class="status">
                 <div class="votes"><p>Votos</p><p><strong>22</strong></p></div>
-                <% if(x%2==0){ %>
+                <% if(i%2==0){ %>
                 <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-ok"></span></p></div>
                 <% }else{%>
                 <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-remove"></span></p></div>

@@ -7,7 +7,10 @@
 
 module.exports = {
   attributes: {
-
+  	'FECHASOLICITUD' : 'datetime',
+  	'dependencia' : {
+  		model : 'dependencia'
+  	}
   }, 
   migrate:'safe'
 };
