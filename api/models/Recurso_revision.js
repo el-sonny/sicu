@@ -8,10 +8,9 @@
 module.exports = {
 
   attributes: {
-  	/*'Folio de la solicitud': {
+  	'Folio de la solicitud': {
   		model: 'solicitud'
-  	}*/
+  	}
   },
   migrate: 'safe',
 };
-
