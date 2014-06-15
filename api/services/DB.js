@@ -1,26 +1,24 @@
 var async = require('async');
 module.exports = { 
 	navQuery : function(req,cb){
-		var params = {};
-		if(req.param('dependencia')) params.dependencia = req.param('dependencia');
-		if(req.param('sector')) params.sector = req.param('sector');
-		if(req.param('status')) params.estatus = req.param('status');
-		Solicitud.find().where(params).limit(10).sort({'FECHASOLICITUD':'desc'}).exec(function(e,s){
-			Dependencia.find({}).sort('nombre').exec(function(e,d){
-				Sector.find({}).sort('nombre').exec(function(e,sec){
-					Estatus.find({}).sort('nombre').exec(function(e,stat){
-						cb({
-							solicitudes:s,
-							dependencias:d,
-							sectores: sec,
-							statii: stat,
-						});
-					});
-				});
-				
+		var functs = [
+			function(callback){
+				Dependencia.find({}).sort('nombre').exec(callback);	
+			},
+			function(callback){
+				Sector.find({}).sort('nombre').exec(callback);
+			},
+			function(callback){
+				Estatus.find({}).sort('nombre').exec(callback);
+			}
+		];
+		async.parallel(functs,function(e,r){
+			return cb({
+				dependencias:r[0],
+				sectores: r[1],
+				statii: r[2],
 			});
 		});
-		
 	},
 	extract : function(old_field,new_field,object,limit){
 		console.log('field',old_field);

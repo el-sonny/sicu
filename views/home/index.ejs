@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12" id="left">
       <!-- lista de solicitudes -->
-      <% for(var i=0; i<solicitudes.length; i++) {
+      <% if(solicitudes){for(var i=0; i<solicitudes.length; i++) {
           var solicitud = solicitudes[i];
       %>
           <div class="panel panel-default">
@@ -38,7 +38,7 @@
           </div>
 
         <hr>
-      <% } %>
+      <% }} %>
     <!-- / lista de solicitudes -->
 
     <!--<p>
