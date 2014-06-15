@@ -43,13 +43,21 @@
 					</select>						
 				</div>
 				
-				<div class="col-md-3">
-		            <p class="input-group date-btn" ng-controller="datepickerCTL">
-		              <span class="input-group-btn">
-		                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i> Fecha</button>
-		              <input type="hidden" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-		              </span>
-		            </p>					
+				<div class="col-md-3">	
+		            <select name="#">
+		            	<option value=""><i class="glyphicon glyphicon-calendar"></i> Fecha</option>
+		            	<option value="2013">2013</option>
+		            	<option value="2012">2012</option>
+		            	<option value="2011">2011</option>
+		            	<option value="2010">2010</option>
+		            	<option value="2009">2009</option>
+		            	<option value="2008">2008</option>
+		            	<option value="2007">2007</option>
+		            	<option value="2006">2006</option>
+		            	<option value="2005">2005</option>
+		            	<option value="2004">2004</option>
+		            	<option value="2003">2003</option>
+		            </select>				
 				</div>				
 			</div>
 		</div>	
