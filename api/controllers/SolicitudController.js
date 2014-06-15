@@ -9,6 +9,7 @@ module.exports = {
 	    index: function(req, res) {
 	    	console.log(req.param('id'));
 	    	Solicitud.findOne({'FOLIO':parseInt(req.param('id'))},function(e,s){
+	    		Dependencia.find({}).sort('name').
 				console.log(s);
 				//res.view({solicitud:s});
 			});
