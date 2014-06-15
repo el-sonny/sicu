@@ -12,14 +12,11 @@
 			</div>
 			<div class="col-md-7">
 				<select name="dependencias">
-					<option value="#">Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
-					<option value="#">Prueba Dependencia</option>
+					<% for(var j=0; j<dependencias.length; j++) {
+				        var dependencia = dependencias[j];
+				    %>
+				    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
+				    <% }%>
 				</select>
 				<select name="sector">
 					<option value="#">Sector</option>
