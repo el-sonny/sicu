@@ -5,6 +5,10 @@ app.controller('votesCTL',function($scope){
 		obj = obj || {};
 		obj.json = true;
 		obj.page = jQuery('.hidden.page').text();
+		obj.dependencia = jQuery('.hidden.dependencia').text();
+		obj.sector = jQuery('.hidden.sector').text();
+		obj.status = jQuery('.hidden.status').text();
+		obj.text = jQuery('.hidden.text').text();
 		jQuery.get('/',obj,function(data){
 			var solicitudes = data.solicitudes
 			jQuery('.panel.panel-default').each(function(i,v){
@@ -25,6 +29,7 @@ app.controller('votesCTL',function($scope){
 	jQuery('.vote-action a').on('click',function(e){
 		e.preventDefault();
 		var $this = $(this);
+		if($this.hasClass('desactive')) return;
 		updateContent({
 			vote:$this.attr('class')
 			,solicitudId:$this.parent().find('span').text()
