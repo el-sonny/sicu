@@ -1,12 +1,12 @@
 var passport = require('passport')
-, Twitter = require('passport-twitter').Strategy
+, twitter = require('passport-twitter').Strategy
 , twitter_keys = {
 	  consumerKey: '7rchLSR07fPcpUe5A6ksyZaCi'
 	, consumerSecret: '2VA32kSl0bUb7C5i0brtYkcO4MSftTbwobrrCfiPIHCdiACmMk'
-	, callbackURL: 'http://127.0.0.1:1339/twitter/callback'
+	, callbackURL: 'http://127.0.0.1:1337/twitter/callback'
 };
 
-passport.use(new Twitter(twitter_keys,function(token,tokenSecret,profile,done){
+passport.use(new twitter(twitter_keys,function(token,tokenSecret,profile,done){
 	var user = {
 		 token:token
 		,tokenSecret:tokenSecret
@@ -15,11 +15,19 @@ passport.use(new Twitter(twitter_keys,function(token,tokenSecret,profile,done){
 	done(null,user);
 }));
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function(user, done){
+	var tmp = {
+		nombre:user.profile.username
+	};
+
+	Twitter.findOrCreate(tmp,tmp).exec(function(err,twitter){
+
+	});
+	
 	done(null, user);
 });
    
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(id, done){
 	done(null,id);
 });
 
