@@ -9,9 +9,10 @@
       %>
           <div class="panel panel-default">
             <div class="panel-heading">
-                <a href=""><%- solicitud.DESCRIPCIONSOLICITUD %></a>
+                <a href="<%- solicitud.FOLIO -%>"><%- solicitud.DESCRIPCIONSOLICITUD %></a>
                 <span class='date'> | <%- solicitud.FECHASOLICITUD %></span>
-                <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p>
+                <p><%- solicitud.dependencia %></p>
+                <!-- <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p> -->
                 <div class="vote-action">
                     Votar <div class="arrows"><a href="#" class="up"></a><a href="#" class="down"></a></div>
                 </div>    

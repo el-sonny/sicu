@@ -7,9 +7,8 @@
 
 module.exports = {
 	index : function(req,res){
-		Solicitud.find({}).limit(10).sort('FECHASOLICITUD').exec(function(e,s){
+		Solicitud.find({}).limit(10).sort({'FECHASOLICITUD':'desc'}).populate('dependencia').exec(function(e,s){
 			res.view({solicitudes:s});
-
 		});
 		
 	},
