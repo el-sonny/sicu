@@ -9,6 +9,7 @@ module.exports = {
 
   attributes: {
 
-  }
+  },
+  migrate : 'safe',
 };
 
