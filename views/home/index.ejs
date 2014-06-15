@@ -1,8 +1,9 @@
-<div class="row">
+<div class="row" ng-controller="votesCTL">
   <div class="col-xs-12" id="left">
       <!-- lista de solicitudes -->
       <% if(solicitudes){for(var i=0; i<solicitudes.length; i++) {
-          var solicitud = solicitudes[i];
+          var solicitud = solicitudes[i]
+	  , desactive = req.user?'':' desactive';
       %>
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -11,7 +12,7 @@
                 <span class='date'> | <%- solicitud.FECHASOLICITUD %></span></p>
                 <!-- <p><%- solicitud.MUNICIPIO%>, <%- solicitud.PAIS %> <%- solicitud.CODIGOPOSTAL %>  </p> -->
                 <div class="vote-action">
-                    Votar <div class="arrows"><a href="#" class="up"></a><a href="#" class="down"></a></div>
+                    Votar <div class="arrows" ><span class="hidden id"></span><a href="#" class="up<%=desactive%>"></a><a href="#" class="down<%=desactive%>"></a></div>
                 </div>    
                 <div class="clear"></div>
             </div>
@@ -24,9 +25,9 @@
                   <p><%- solicitud.TEXTORESPUESTA%></p>
               </div>              
             </div>
-            <div class="col-md-3">
-              <div class="status">
-                <div class="votes"><p>Votos</p><p><strong>22</strong></p></div>
+            <div class="col-md-3" >
+              <div class="status" >
+                <div class="votes"> <p>Votos</p><p><strong></strong></p></div>
                 <% if(i%2==0){ %>
                 <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-ok"></span></p></div>
                 <% }else{%>
