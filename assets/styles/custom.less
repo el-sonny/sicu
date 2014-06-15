@@ -29,7 +29,7 @@ html .navbar-brand:hover,html .navbar-brand:focus{color:white;}
 
 .banner{padding: 20px 10px;text-align: center;background: transparent url(/images/fondo.jpg) no-repeat center;background-size:auto 100%;color: white;}
 .filter-search{margin-left : auto!important;margin-right: auto!important;max-width: 1000px;padding-top: 20px;}
-.filter-search select{background: none;height: 34px}
+.filter-search select{background: none;height: 34px;width: 100%}
 .filter-search .btn-search{background: #0FBD71!important;color: #fff}
 .filter-search .col-md-4 , .filter-search .col-md-7 {border-right: 1px solid #cfcfcf}
 .filter-search .date{display: inline-block;padding: 0 15px;}
@@ -69,8 +69,9 @@ html .navbar-brand:hover,html .navbar-brand:focus{color:white;}
 
 /*Media queries*/
 @media (max-width: 992px) {
-	.filter-search .col-md-4 , .filter-search .col-md-7  , .filter-search .col-md-1{padding-top: 10px;}
+	.filter-search .col-md-3 , .filter-search .col-md-3  , .filter-search .col-md-3{padding-top: 10px;}
 	.filter-search .col-md-1{text-align: center;}
+	.filter-search .date{padding: 15px 0;text-align: center;width: 100%}
 }
 
 @media (max-width: 767px) {
