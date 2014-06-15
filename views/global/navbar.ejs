@@ -8,8 +8,12 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#"><span class='glyphicon glyphicon-user'></span> Login</a></li>
-        <li><a href="#"><span class='glyphicon glyphicon-lock'></span>Salir</a></li>
+      	<% if(req.user && req.user.profile){ %>
+        	<li><a href="http://twitter.com/<%=req.user.profile.username%>" target="_blank"><span class='glyphicon glyphicon-user'></span> <%= req.user.profile.displayName%></a></li>
+        	<li><a href="/twitter/logout"><span class='glyphicon glyphicon-lock'></span>Salir</a></li>
+	<%}else { %>
+	        <li><a href="/twitter/auth"><span class='glyphicon glyphicon-user'></span> Login</a></li>
+	<% } %>
       </ul>
     </div>
 </div>

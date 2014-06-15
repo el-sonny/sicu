@@ -14,8 +14,13 @@ module.exports = {
   	'FOLIO' : {
       unique : true,
       index : true
-  	}
-  }, 
+  	},
+    'recursos_revision' : {
+      collection : 'recurso_revision',
+      via : 'Folio de la solicitud'
+    },
+  },
+  
   migrate:'safe'
 };
 
