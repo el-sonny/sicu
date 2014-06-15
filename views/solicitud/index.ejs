@@ -26,7 +26,11 @@
         <div class="col-md-3">
           <div class="status">
             <div class="votes"><p>Votos</p><p><strong>22</strong></p></div>
+            <% if (solicitud.RESPUESTA!= 'Sin respuesta'){ %>
+            <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-ok"></span></p></div>
+            <% }else{%>
             <div class="respondida"><p>Respondida</p><p><span class="glyphicon glyphicon-remove"></span></p></div>
+            <% }%>
             <div class="clear"></div>
           </div>
         </div>
