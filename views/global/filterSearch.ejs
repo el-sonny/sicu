@@ -1,54 +1,54 @@
 <div class="row filter-search">
-		<form class="">
-			<div class="col-md-4">
-				<div class="form-group" style="display:inline;">
-				  <div class="input-group">
-				    <input type="text" class="form-control" placeholder="What are searching for?">
-				    <span class="input-group-btn">
-				          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> </button>
-				    </span>
-				  </div>
+	<form class="" action='/' method="get" accept-charset="utf-8">
+		<div class="col-md-4">
+			<div class="form-group" style="display:inline;">
+			  <div class="input-group">
+			    <input type="text" class="form-control" placeholder="Que estas buscando?">
+			    <span class="input-group-btn">
+			          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> </button>
+			    </span>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-7">
+			<div class="row">
+				<div class="col-md-3">
+					<select name="dependencia">
+						<option value="">Dependencia</option>
+						<% for(var j=0; j<dependencias.length; j++) {
+					        var dependencia = dependencias[j];
+					    %>
+					    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>					
+				<div class="col-md-3">
+					<select name="sector">
+						<option value="">Sector</option>
+						<% for(var j=0; j<sectores.length; j++) {
+					        var sector = sectores[j];
+					    %>
+					    	<option value='<%- sector.id %>'><%- sector.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>
+				<div class="col-md-3">
+					<select name="status">
+						<option value="">Status</option>
+						<% for(var j=0; j<statii.length; j++) {
+					        var status = statii[j];
+					    %>
+					    	<option value='<%- status.id %>'><%- status.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>
+				<div class="col-md-3">
+					<div class="date"><span class='glyphicon glyphicon-calendar'></span><span>Fecha</span> <span class="caret"></span></div>						
 				</div>
 			</div>
-			<div class="col-md-7">
-				<div class="row">
-					<div class="col-md-3">
-						<select name="dependencias">
-							<option value="#">Dependencia</option>
-							<% for(var j=0; j<dependencias.length; j++) {
-						        var dependencia = dependencias[j];
-						    %>
-						    	<option value='<%- dependencia.id %>'><%- dependencia.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>					
-					<div class="col-md-3">
-						<select name="sector">
-							<option value="#">Sector</option>
-							<% for(var j=0; j<sectores.length; j++) {
-						        var sector = sectores[j];
-						    %>
-						    	<option value='<%- sector.id %>'><%- sector.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>
-					<div class="col-md-3">
-						<select name="status">
-							<option value="#">Status</option>
-							<% for(var j=0; j<statii.length; j++) {
-						        var status = statii[j];
-						    %>
-						    	<option value='<%- status.id %>'><%- status.nombre %></option>
-						    <% }%>
-						</select>						
-					</div>
-					<div class="col-md-3">
-						<div class="date"><span class='glyphicon glyphicon-calendar'></span><span>Fecha</span> <span class="caret"></span></div>						
-					</div>
-				</div>
-			</div>	
-			<div class="col-md-1">
-				<button type="button" class="btn btn-search">Buscar</button>
-			</div>
-		</form>	
+		</div>	
+		<div class="col-md-1">
+			<input type="submit" class="btn btn-search" value='buscar' />
+		</div>
+	</form>	
 </div>
