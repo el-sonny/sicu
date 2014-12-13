@@ -13,13 +13,17 @@ module.exports = {
 			},
 			function(callback){
 				Estatus.find({}).sort('nombre').exec(callback);
-			}
+			},
+			function(callback){
+				Respuesta.find({}).sort('nombre').exec(callback);
+			},
 		];
 		async.parallel(functs,function(e,r){
 			return cb({
 				dependencias:r[0],
 				sectores: r[1],
 				statii: r[2],
+				respuestas : r[3]
 			});
 		});
 	},

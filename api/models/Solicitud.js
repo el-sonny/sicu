@@ -11,7 +11,7 @@ module.exports = {
       type: 'DATETIME',
       index : true
     },
-  	'FOLIO' : {
+  	'folio' : {
       unique : true,
       index : true
     },
@@ -24,22 +24,20 @@ module.exports = {
     'sector' : {
       index : true
     },
-    'sector' : {
+    'respuesta' : {
       index : true
     },
     'recursos_revision' : {
       collection : 'recurso_revision',
       via : 'Folio de la solicitud'
     },
-    'ferencias_periodisticas' : {
+    'referencias_periodisticas' : {
       collection : 'referencia_periodistica',
       via : 'solicitud'
     },
     'respuesta' : {
       model : 'respuesta'
-    }
+    },
   },
-  
-  migrate:'safe'
 };
 

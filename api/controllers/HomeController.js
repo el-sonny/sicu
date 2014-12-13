@@ -11,13 +11,14 @@ module.exports = {
 		if(req.param('dependencia')) params.dependencia = req.param('dependencia');
 		if(req.param('sector')) params.sector = req.param('sector');
 		if(req.param('status')) params.estatus = req.param('status');
+		if(req.param('respuesta')) params.respuesta = req.param('respuesta');
 		if(req.param('text')) params.DESCRIPCIONSOLICITUD = {contains : req.param('text')};
 		if(req.param('fecha')) params.FECHASOLICITUD = {startsWith:req.param('fecha')};
 		var page = req.param('page') ? req.param('page') : 0;
 		DB.navQuery(req,function(values){
 			vote(req,res,function(voteup,votedown){
 				Solicitud.count(params).exec(function(e,count){
-					Solicitud.find().where(params).sort({'FECHASOLICITUD':'desc'}).paginate({page:page}).exec(function(e,solicitudes){
+					Solicitud.find().where(params).sort({'FECHARESPUESTA':'desc'}).paginate({page:page}).exec(function(e,solicitudes){
 						values.pagination = {};
 						values.pagination.pages = Math.ceil(count/10);
 						values.pagination.page = page;

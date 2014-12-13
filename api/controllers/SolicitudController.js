@@ -6,7 +6,7 @@
  */
 module.exports = {
 	    index: function(req, res) {
-			Solicitud.findOne({'id':req.param('id')}).populate('ferencias_periodisticas').exec(function(e,s){
+			Solicitud.findOne({'id':req.param('id')}).populate('referencias_periodisticas').exec(function(e,s){
 				if(e) throw(e);
 				DB.navQuery(req,function(values){
 					values.solicitud = s;

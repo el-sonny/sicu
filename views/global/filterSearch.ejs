@@ -1,6 +1,6 @@
 <div class="row filter-search">
 	<form class="" action='/' method="get" accept-charset="utf-8">
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="form-group" style="display:inline;">
 			  <div class="input-group">
 			    <input type="text" class="form-control" placeholder="Que estas buscando?" name='text' />
@@ -10,7 +10,7 @@
 			  </div>
 			</div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-8">
 			<div class="row">
 				<div class="col-md-3">
 					<select name="dependencia">
@@ -32,7 +32,7 @@
 					    <% }%>
 					</select>						
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<select name="status">
 						<option value="">Status</option>
 						<% for(var j=0; j<statii.length; j++) {
@@ -43,9 +43,21 @@
 					</select>						
 				</div>
 				
-				<div class="col-md-3">	
+				<div class="col-md-2">
+					<select name="respuesta">
+						<option value="">Respuesta</option>
+						<% for(var j=0; j<respuestas.length; j++) {
+					        var respuesta = respuestas[j];
+					    %>
+					    	<option value='<%- respuesta.id %>'><%- respuesta.nombre %></option>
+					    <% }%>
+					</select>						
+				</div>
+
+				<div class="col-md-2">	
 		            <select name="fecha">
-		            	<option value=""><i class="glyphicon glyphicon-calendar"></i> Fecha</option>
+		            	<option value=""><i class="glyphicon glyphicon-calendar"></i> Año</option>
+		            	<option value="2013">2014</option>
 		            	<option value="2013">2013</option>
 		            	<option value="2012">2012</option>
 		            	<option value="2011">2011</option>
